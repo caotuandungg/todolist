@@ -1,0 +1,64 @@
+.main{
+    display: flex;
+    justify-content: center;
+    /* border: red 1px solid; */
+    
+}
+.container{
+    display: inline-block;
+    /* border: red 1px solid; */
+}
+.form-control{
+    display: inline-flex;
+}
+.form-control .btn-add{
+    line-height: 6px;
+    /* height: 45px; */
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    
+}
+.content{
+    width: 600px;
+    resize: none;
+    height: 50px;
+    /* border: none; */
+    border-radius: 5px;
+}
+.list-task ul{
+    /* border: red 1px solid; */
+    width: 605px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    /* luu y la phai co padding 0 thi no moi sat 2 ben vien` dc */
+}
+.list-task ul li {
+    display: flex;
+    list-style-type: none;
+    line-height: 50px;
+    margin-bottom: 5px;
+    background-color: rgb(194, 181, 181);
+    
+}
+.list-task ul li a {
+    text-decoration: none;
+    display: block;
+    margin-left: 15px;
+    padding: 0; ;
+}
+.list-task .task-name{
+    width: 100%;
+    /* border: 1px solid green; */
+}
+.list-task a {
+    font-size: 25px;
+}
+.list-task .delete{
+    color: red;
+}
