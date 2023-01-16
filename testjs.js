@@ -2,11 +2,14 @@ let btnTask = document.querySelector(".btn-add");
 let taskName = document.querySelector(".content");
 let task = getTaskFromLocalStorage();
 let newValue;
+console.log(btnTask)
+
 // let taskInput = document.querySelector('.task-name1')
 // console.log(taskInput)
 renderTask(task);
 
 btnTask.addEventListener("click", function () {
+  // console.log(this)
   let task = getTaskFromLocalStorage();
   if (!taskName.value) {
     alert("Nhap ten cong viec");
@@ -19,9 +22,9 @@ btnTask.addEventListener("click", function () {
   //Sau đó mình vẫn cần phải lấy ra danh sách task
   
   // console.log(taskId)
-  let task2 = { 
-    name: taskName.value
-  };
+  let task2 = { name: taskName.value};
+  let task3 = `update`
+  
   //Đến đây vẫn chưa biết đc là push hay update, nên mình phải thêm câu lệnh để kiểm tra, tại vì key vẫn có cái bằng 0 (đoạn này cx ko hiểu vì sao)
   //Câu lệnh này nghĩa là: nếu taskId chính xác là bằng 0, hoặc là tồn tại cái taskId thì sẽ thực hiện, còn trái lại thì sẽ xóa
   if (taskId == 0 || taskId) 
@@ -34,7 +37,7 @@ btnTask.addEventListener("click", function () {
       task[taskId] = { name: newValue };
     } else 
     {
-      task[taskId] = task2;
+      task[taskId] = task2
     }
     //Đến đây, sau khi update nội dung xong, thì mình phải set lại attribute kia về rỗng
     //Cách 1 là dùng hàm setAttribute có tên là id, value là dấu nháy kép- có nghĩa là rỗng
@@ -44,6 +47,7 @@ btnTask.addEventListener("click", function () {
   else 
   {
     task.push(task2);
+    //câu này nghĩa là nếu ko update gì sẽ là thêm nội dung mới 
     //ham push la gi?
   }
   //Đến đây nghĩa là sau khi update xong thì vẫn phải đưa giá trị của taskName về rỗng và lưu lại vào local storage
@@ -53,14 +57,14 @@ btnTask.addEventListener("click", function () {
 });
 
 taskName.addEventListener("keyup",(e) => {
-  
-  // let taskId = this.getAttribute("id");
-  // console.log(taskId)
+  console.log(this)
   let task = getTaskFromLocalStorage();
   let task2 = { name: taskName.value  };
   if(e.keyCode === 13)
   {
-    // console.log('1323123')
+    
+    // let taskId2 = this.getAttribute("id");
+    // console.log(taskId2)
     if (!taskName.value) {
       alert("Nhap ten cong viec");
       return false;
